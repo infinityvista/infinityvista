@@ -15,7 +15,7 @@ for i, v in ipairs(workspace.Arena.island5.Slapples:GetDescendants()) do
                 end
             end
 local serverList = {}
-for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=1000")).data) do
 	if v.playing and type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
 		serverList[#serverList + 1] = v.id
 	end
